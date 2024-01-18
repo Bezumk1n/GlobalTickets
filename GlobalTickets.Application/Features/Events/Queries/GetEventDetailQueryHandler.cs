@@ -23,6 +23,7 @@ namespace GlobalTickets.Application.Features.Events.Queries
         }
         public async Task<EventDetailVm> Handle(GetEventDetailQuery request, CancellationToken cancellationToken)
         {
+            // Text from VSCode
             var @event = await _eventRepository.GetByIdAsync(request.Id);
             var eventDetailDto = _mapper.Map<EventDetailVm>(@event);
             var category = await _categoryRepository.GetByIdAsync(@event.CategoryId);
