@@ -8,13 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GlobalTickets.Application.Features.Events.Queries
+namespace GlobalTickets.Application.Features.Events.Queries.GetEventsList
 {
     public class GetEventsListQueryHandler : IRequestHandler<GetEventsListQuery, List<EventVm>>
     {
         private readonly IMapper _mapper;
         private readonly IEventRepository _eventRepository;
-
         public GetEventsListQueryHandler(IMapper mapper, IEventRepository eventRepository)
         {
             _mapper = mapper;

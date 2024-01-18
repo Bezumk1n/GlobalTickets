@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GlobalTickets.Application.Features.Events.Queries
+namespace GlobalTickets.Application.Features.Events.Queries.GetEventDetail
 {
     public class EventDetailVm
     {
