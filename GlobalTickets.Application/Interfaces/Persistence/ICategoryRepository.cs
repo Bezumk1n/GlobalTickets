@@ -9,5 +9,6 @@ namespace GlobalTickets.Application.Interfaces.Persistence
 {
     public interface ICategoryRepository : IAsyncRepository<Category>
     {
+        Task<IReadOnlyList<Category>> GetCategoriesWithEvents(bool includeHistory);
     }
 }
