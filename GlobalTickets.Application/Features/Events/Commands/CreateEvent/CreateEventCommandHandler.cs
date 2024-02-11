@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GlobalTickets.Application.Exceptions;
 using GlobalTickets.Application.Interfaces.Persistence;
 using GlobalTickets.Domain.Entities;
 using MediatR;
@@ -22,6 +23,11 @@ namespace GlobalTickets.Application.Features.Events.Commands.CreateEvent
         }
         public async Task<Guid> Handle(CreateEventCommand request, CancellationToken cancellationToken)
         {
+            var validator = new CreateEventCommandValidator(_eventRepository);
+            var validationResult = await validator.ValidateAsync(request);
+            if (validationResult.Errors.Count > 0)
+                throw new ValidationException(validationResult);
+
             var @event = _mapper.Map<Event>(request);
             @event = await _eventRepository.AddAsync(@event);
             return @event.Id;
