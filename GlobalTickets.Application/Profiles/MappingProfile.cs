@@ -22,9 +22,11 @@ namespace GlobalTickets.Application.Profiles
         {
             CreateMap<Event, EventVm>().ReverseMap();
             CreateMap<Event, EventDetailVm>().ReverseMap();
+
             CreateMap<Category, CategoryDto>();
             CreateMap<Category, CategoryListVm>();
             CreateMap<Category, CategoryEventListVm>();
+
             CreateMap<Event, CategoryEventDto>();
             CreateMap<CreateEventCommand, Event>();
             CreateMap<UpdateEventCommand, Event>();
