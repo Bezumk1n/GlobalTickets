@@ -9,5 +9,7 @@ namespace GlobalTickets.Application.Interfaces.Persistence
 {
     public interface IOrderRepository : IAsyncRepository<Order>
     {
+        Task<IReadOnlyList<Order>> GetPagedOrdersForMonth(DateTime date, int page, int size);
+        Task<int> GetTotalCountOfOrdersForMonth(DateTime date);
     }
 }

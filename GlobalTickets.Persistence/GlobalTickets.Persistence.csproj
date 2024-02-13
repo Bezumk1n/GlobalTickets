@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GlobalTickets.Application\GlobalTickets.Application.csproj" />
     <ProjectReference Include="..\GlobalTickets.Domain\GlobalTickets.Domain.csproj" />
   </ItemGroup>
 
