@@ -8,7 +8,7 @@ namespace GlobalTickets.Application.Features.Categories.Commands
 {
     public class CreateCategoryDto
     {
-        public Guid CategoryId { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;
     }
 }
